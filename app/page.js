@@ -1,95 +1,125 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useState, useEffect } from 'react';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [scrolled, setScrolled] = useState(false);
+  const [fontIndex, setFontIndex] = useState(0);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+  const fonts = [
+    'Arial, sans-serif',
+    'Georgia, serif',
+    'Courier New, monospace',
+    'Tahoma, sans-serif',
+    'Verdana, sans-serif'
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (scrolled) return;
+
+    const interval = setInterval(() => {
+      setFontIndex((prevIndex) => (prevIndex + 1) % fonts.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [scrolled]);
+
+  //Contents of page go under here
+  return (
+    <div className="container">
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+        <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
+      </header>
+      <main className="content">
+        <section className="intro">
+          <h2>Have a look around!</h2>
+          <p>Scroll down to explore some of my projects</p>
+        </section>
+        <section className="projects">
+          <h2>Personal Projects</h2>
+          <div>
+          <div className="project-container" style={{width: '500px'}}>
+                <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
+                <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
+                <p>This project interacts with a DB to return the results</p>
+            </div>
+
+            <div className="project-container" style={{width: '500px'}}>
+                <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
+                <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
+                <p>A current W.I.P that allows a user(myself) to keep a log of the specific train sets and carriages that they have ridden in before </p>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <style jsx>{`
+        .container {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
+          background-color: blue;
+        }
+
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          transition: all 0.3s ease;
+          background-color: #2D9DFF;
+          color: yellow;
+        }
+
+        .header.scrolled {
+          height: 50px;
+          background: #2D9DFF;
+          justify-content: flex-start;
+          padding-right: 20px;
+        }
+
+        .name {
+          font-size: 4rem;
+          transition: font-size 0.3s ease, transform 0.3s ease;
+        }
+
+        .header.scrolled .name {
+          font-size: 1.5rem;
+        }
+
+        .content {
+          margin-top: 10vh;
+          padding: 20px;
+        }
+
+        .intro {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .projects {
+          margin-top: 50px;
+        }
+
+        .project-container {
+         background-color: rgba(200, 220, 255, 0.8);
+         border-radius: 15px;
+         padding: 20px;
+         margin-bottom: 20px;
+        }
+      `}</style>
     </div>
   );
 }

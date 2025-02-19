@@ -43,20 +43,42 @@ export default function Home() {
           <p>Scroll down to explore some of my projects</p>
         </section>
         <section className="projects">
-          <h2>Personal Projects</h2>
-          <div>
-          <div className="project-container" style={{width: '500px'}}>
-                <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
-                <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
-                <p>This project interacts with a DB to return the results</p>
-            </div>
+        <table>
+          <thead>
+            <tr>
+              <th><h2>Personal Projects</h2></th>
+              <th><h2>Timeline</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div>
+                  <div className="project-container" style={{width: '500px'}}>
+                    <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
+                    <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
+                    <p>This project interacts with a DB to return the results</p>
+                  </div>
 
-            <div className="project-container" style={{width: '500px'}}>
-                <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
-                <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
-                <p>A current W.I.P that allows a user(myself) to keep a log of the specific train sets and carriages that they have ridden in before </p>
-            </div>
-          </div>
+                  <div className="project-container" style={{width: '500px'}}>
+                    <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
+                    <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
+                    <p>A current W.I.P that allows a user (myself) to keep a log of the specific train sets and carriages that they have ridden in before</p>
+                  </div>
+                </div>
+              </td>
+              
+              <td>
+                <ul className="experinceSide">
+                  <h2>Diploma of Information Technology</h2>
+                    <h3>UOW - 2023-2024</h3>
+                  <h2>Diploma of Information Technology</h2>
+                    <h3>UOW - 2024-Present</h3>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </section>
       </main>
 
@@ -119,6 +141,10 @@ export default function Home() {
          padding: 20px;
          margin-bottom: 20px;
         }
+
+        table {
+        border-spacing: 50px}
+
       `}</style>
     </div>
   );

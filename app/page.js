@@ -43,42 +43,30 @@ export default function Home() {
           <p>Scroll down to explore some of my projects</p>
         </section>
         <section className="projects">
-        <table>
-          <thead>
-            <tr>
-              <th><h2>Personal Projects</h2></th>
-              <th><h2>Timeline</h2></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div>
-                  <div className="project-container" style={{width: '500px'}}>
-                    <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
-                    <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
-                    <p>This project interacts with a DB to return the results</p>
-                  </div>
+        <div className="projects-experiences-container">
+          <div className="projectsDiv">
+            <div className="project-container">
+              <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
+              <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
+              <p>This project interacts with a DB to return the results</p>
+            </div>
 
-                  <div className="project-container" style={{width: '500px'}}>
-                    <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
-                    <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
-                    <p>A current W.I.P that allows a user (myself) to keep a log of the specific train sets and carriages that they have ridden in before</p>
-                  </div>
-                </div>
-              </td>
-              
-              <td>
-                <ul className="experinceSide">
-                  <h2>Diploma of Information Technology</h2>
-                    <h3>UOW - 2023-2024</h3>
-                  <h2>Diploma of Information Technology</h2>
-                    <h3>UOW - 2024-Present</h3>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <div className="project-container">
+              <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
+              <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
+              <p>A current W.I.P that allows a user (myself) to keep a log of the specific train sets and carriages that they have ridden in before</p>
+            </div>
+          </div>
+
+          <div className="experiences">
+            <h2>Diploma of Information Technology</h2>
+            <h3>UOW - 2023-2024</h3><br></br>
+            <h2>Bachelor of Information Technology</h2>
+            <h3>UOW - 2024-Present</h3><br></br><br></br>
+
+            <h1>Known Technologies</h1>
+          </div>
+        </div>
         </section>
       </main>
 
@@ -113,6 +101,7 @@ export default function Home() {
         }
 
         .name {
+          text-align: center;
           font-size: 4rem;
           transition: font-size 0.3s ease, transform 0.3s ease;
         }
@@ -144,6 +133,21 @@ export default function Home() {
 
         table {
         border-spacing: 50px}
+
+        .projects-experiences-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 20px;
+        }
+
+        .projectsDiv {
+          width: 50%;
+        }
+
+        .experiences {
+          width: 50%;
+        }
 
       `}</style>
     </div>

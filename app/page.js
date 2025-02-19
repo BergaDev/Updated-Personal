@@ -37,6 +37,7 @@ export default function Home() {
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
       </header>
+
       <main className="content">
         <section className="intro">
           <h2>Have a look around!</h2>
@@ -46,15 +47,15 @@ export default function Home() {
         <div className="projects-experiences-container">
           <div className="projectsDiv">
             <div className="project-container">
-              <p><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></p>
-              <p>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</p>
-              <p>This project interacts with a DB to return the results</p>
+              <h2><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></h2>
+              <h3>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</h3>
+              <h3>This project interacts with a DB to return the results</h3>
             </div>
 
             <div className="project-container">
-              <p><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></p>
+              <h2><a href="https://www.bergadev.com/TrainTracking" target="_blank">Train Track(ing) - Personal Ride Tracking</a></h2>
               <p><a href="https://github.com/BergaDev/TrainTracking">Source</a></p>
-              <p>A current W.I.P that allows a user (myself) to keep a log of the specific train sets and carriages that they have ridden in before</p>
+              <h3>A current W.I.P that allows a user (myself) to keep a log of the specific train sets and carriages that they have ridden in before</h3>
             </div>
           </div>
 
@@ -76,7 +77,7 @@ export default function Home() {
           margin: 0;
           padding: 0;
           min-height: 100vh;
-          background-color: blue;
+          background-color: #2D9DFF;
         }
 
         .header {
@@ -147,6 +148,10 @@ export default function Home() {
 
         .experiences {
           width: 50%;
+        }
+
+        h2 {
+        color: yellow;
         }
 
       `}</style>

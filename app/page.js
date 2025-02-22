@@ -6,13 +6,16 @@ export default function Home() {
   const [fontIndex, setFontIndex] = useState(0);
 
   const fonts = [
-    'Arial, sans-serif',
-    'Georgia, serif',
-    'Courier New, monospace',
-    'Tahoma, sans-serif',
-    'Verdana, sans-serif'
+    'doto', 
+    'send', 
+    'dynaPuff',
+    'Swash',
+    'handDrawn',
+    'unicase',
+    'meow'
   ];
 
+  //Full to banner
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -21,6 +24,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  //Name font trans
   useEffect(() => {
     if (scrolled) return;
 
@@ -40,6 +44,7 @@ export default function Home() {
 
       <main className="content">
         <section className="intro">
+          <br></br><br></br>
           <h2>Have a look around!</h2>
           <p>Scroll down to explore some of my projects</p>
         </section>
@@ -47,7 +52,7 @@ export default function Home() {
         <div className="projects-experiences-container">
           <div className="projectsDiv">
             <div className="project-container">
-              <h2><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></h2>
+              <h2><a href="https://www.bergadev.com/trainFinder" target="_blank">Sydney Trains Lookup</a></h2><br></br>
               <h3>Built as part of another project, this site searches for an entered train set number or carriage number passed to it</h3>
               <h3>This project interacts with a DB to return the results</h3>
             </div>
@@ -66,10 +71,67 @@ export default function Home() {
             <h3>UOW - 2024-Present</h3><br></br><br></br>
 
             <h1>Known Technologies</h1>
+              <p>Java</p>
+              <p>C++</p>
+              <p>HTML/CSS</p>
+              <p>JS</p>
+              <p>NodeJS/NextJS</p>
           </div>
         </div>
         </section>
       </main>
+
+      <style jsx global>{`
+        @font-face {
+          font-family: 'doto';
+          src: url('/fonts/Doto-VariableFont_ROND,wght.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'send';
+          src: url('/fonts/SendFlowers-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'dynaPuff';
+          src: url('/fonts/DynaPuff-VariableFont_wdth,wght.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Swash';
+          src: url('/fonts/DeliusSwashCaps-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'handDrawn';
+          src: url('/fonts/DeliciousHandrawn-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'unicase';
+          src: url('/fonts/DeliusUnicase-Bold.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'meow';
+          src: url('/fonts/MeowScript-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+        
+      `}</style>
 
       <style jsx>{`
         .container {
@@ -77,7 +139,7 @@ export default function Home() {
           margin: 0;
           padding: 0;
           min-height: 100vh;
-          background-color: #2D9DFF;
+          background: #2D9DFF;
         }
 
         .header {
@@ -90,8 +152,8 @@ export default function Home() {
           align-items: center;
           height: 100vh;
           transition: all 0.3s ease;
-          background-color: #2D9DFF;
           color: yellow;
+          background: #2D9DFF;
         }
 
         .header.scrolled {
@@ -141,8 +203,8 @@ export default function Home() {
           align-items: flex-start;
           gap: 20px;
         }
-
-        .projectsDiv {
+        
+        .projectsDiv, .experiences {
           width: 50%;
         }
 
@@ -150,8 +212,23 @@ export default function Home() {
           width: 50%;
         }
 
+        .projectsDiv, .experiences {
+          width: 90%;
+        }
+
         h2 {
         color: yellow;
+        font-size: 1.5rem;
+        }
+
+        .project-container {
+            padding: 15px;
+          }
+
+        @media (max-width: 768px) {
+        .projects-experiences-container {
+          flex-direction: column;
+          align-items: center;
         }
 
       `}</style>

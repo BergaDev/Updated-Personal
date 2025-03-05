@@ -130,6 +130,13 @@ export default function Home() {
           font-weight: normal;
           font-style: normal;
         }
+
+        @font-face {
+          font-family: 'gowun';
+          src: url('/fonts/GowunDodum-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
         
       `}</style>
 
@@ -185,6 +192,7 @@ export default function Home() {
 
         .projects {
           margin-top: 50px;
+          font-family: gowun;
         }
 
         .project-container {

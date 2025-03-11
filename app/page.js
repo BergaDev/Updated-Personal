@@ -65,10 +65,13 @@ export default function Home() {
           </div>
 
           <div className="experiences">
-            <h2>Diploma of Information Technology</h2>
-            <h3>UOW - 2023-2024</h3><br></br>
-            <h2>Bachelor of Information Technology</h2>
-            <h3>UOW - 2024-Present</h3><br></br><br></br>
+
+            <div className="other-container">
+              <h2>Diploma of Information Technology</h2>
+              <h3>UOW - 2023-2024</h3><br></br>
+              <h2>Bachelor of Information Technology</h2>
+              <h3>UOW - 2024-Present</h3><br></br><br></br>
+            </div>
 
             <h1>Known Technologies</h1>
               <p>Java</p>
@@ -137,6 +140,13 @@ export default function Home() {
           font-weight: normal;
           font-style: normal;
         }
+
+        @font-face {
+          font-family: 'pixer';
+          src: url('/fonts/Pixer-Regular.woff') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
         
       `}</style>
 
@@ -168,6 +178,11 @@ export default function Home() {
           background: #2D9DFF;
           justify-content: flex-start;
           padding-right: 20px;
+          padding-left: 20px;
+        }
+
+        h1 {
+        font-family: pixer;
         }
 
         .name {
@@ -196,7 +211,14 @@ export default function Home() {
         }
 
         .project-container {
-         background-color: rgba(200, 220, 255, 0.8);
+         background-color: rgba(77, 145, 247, 0.34);
+         border-radius: 15px;
+         padding: 20px;
+         margin-bottom: 20px;
+        }
+
+        .other-container {
+         background-color: rgba(77, 145, 247, 0.34);
          border-radius: 15px;
          padding: 20px;
          margin-bottom: 20px;

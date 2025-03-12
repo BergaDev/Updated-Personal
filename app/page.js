@@ -58,7 +58,8 @@ export default function Home() {
 
   //Contents of page go under here
   return (
-    <div className="container">
+    <>
+      <div className="container">
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
         {menuOpen && <div className="menu-overlay"></div>}
@@ -388,6 +389,7 @@ export default function Home() {
         }
 
       `}</style>
-    </div>
+      </div>
+    </>
   );
 }

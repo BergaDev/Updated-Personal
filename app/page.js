@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [fontIndex, setFontIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const fonts = [
     'doto', 
@@ -24,6 +25,13 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent nav-links from being hidden when scrolling on desktop
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setMenuOpen(false);
+    }
+  }, [scrolled]);
+
   //Name font trans
   useEffect(() => {
     if (scrolled) return;
@@ -35,12 +43,32 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [scrolled]);
 
+  // Close menu on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".menu-button") && !event.target.closest(".nav-links")) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [menuOpen]);
+
   //Contents of page go under here
   return (
     <div className="container">
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
-        <nav className="nav-links">
+        {menuOpen && <div className="menu-overlay"></div>}
+        <button className="menu-button" onClick={(e) => {
+          e.stopPropagation();
+          setMenuOpen(!menuOpen);
+        }}>
+          ☰
+        </button>
+        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <a href="https://github.com/BergaDev" target="_blank">Github</a>
           <a href="https://www.linkedin.com/in/matthew-bergamini" target="_blank">Linked-In</a>
           <a href="https://www.instagram.com/could_be_a_berga/" target="_blank">Instagram</a>
@@ -188,6 +216,61 @@ export default function Home() {
           padding-left: 20px;
         }
 
+        .menu-button {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 2rem;
+          cursor: pointer;
+          color: yellow;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          z-index: 11;
+        }
+
+        .menu-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 9;
+        }
+
+        @media (max-width: 768px) {
+          .menu-button {
+            display: block;
+          }
+
+          .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background: rgba(45, 157, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+          }
+
+          .nav-links.open {
+            display: flex;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .nav-links {
+            display: flex !important;
+            gap: 15px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+          }
+        }
+
         .nav-links {
           display: none;
           position: absolute;
@@ -195,10 +278,6 @@ export default function Home() {
           right: 20px;
         }
 
-        .header.scrolled .nav-links {
-          display: flex;
-          gap: 15px;
-        }
 
         .nav-links a {
           color: yellow;

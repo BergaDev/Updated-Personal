@@ -226,7 +226,7 @@ export default function Home() {
           position: absolute;
           top: 10px;
           right: 20px;
-          z-index: 11;
+          z-index: 1100; 
         }
 
         .menu-overlay {
@@ -236,7 +236,7 @@ export default function Home() {
           width: 100%;
           height: 100%;
           background: rgba(0, 0, 0, 0.5);
-          z-index: 9;
+          z-index: 999; 
         }
 
         @media (max-width: 768px) {
@@ -247,17 +247,28 @@ export default function Home() {
           .nav-links {
             display: none;
             flex-direction: column;
-            position: absolute;
+            position: fixed; 
             top: 50px;
-            right: 20px;
-            background: rgba(45, 157, 255, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
+            right: 10px;
+            width: 85vw; /* Increased width */
+            max-width: 350px;
+            background: rgba(45, 157, 255, 0.95);
+            padding: 25px;
+            border-radius: 10px;
+            z-index: 1000; 
           }
 
           .nav-links.open {
             display: flex;
+          }
+
+          .nav-links a {
+            color: yellow;
+            text-decoration: none;
+            padding: 18px; 
+            font-size: 1.4rem;
+            display: block;
+            text-align: center; 
           }
         }
 

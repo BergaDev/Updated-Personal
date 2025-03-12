@@ -73,7 +73,7 @@ export default function Home() {
               <h3>UOW - 2024-Present</h3><br></br><br></br>
             </div>
 
-            <h1>Known Technologies</h1>
+            <h1>Used Technologies</h1>
               <p>Java</p>
               <p>C++</p>
               <p>HTML/CSS</p>

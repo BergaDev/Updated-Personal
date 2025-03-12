@@ -40,6 +40,13 @@ export default function Home() {
     <div className="container">
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
+        <nav className="nav-links">
+          <a href="https://github.com/BergaDev" target="_blank">Github</a>
+          <a href="https://www.linkedin.com/in/matthew-bergamini" target="_blank">Linked-In</a>
+          <a href="https://www.instagram.com/could_be_a_berga/" target="_blank">Instagram</a>
+          <a href="https://www.discordapp.com/users/579529508194091019" target="_blank">Discord</a>
+          <a href="mailto:matthew@bergamini.au">Email</a>
+        </nav>
       </header>
 
       <main className="content">
@@ -179,6 +186,29 @@ export default function Home() {
           justify-content: flex-start;
           padding-right: 20px;
           padding-left: 20px;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+        }
+
+        .header.scrolled .nav-links {
+          display: flex;
+          gap: 15px;
+        }
+
+        .nav-links a {
+          color: yellow;
+          text-decoration: none;
+          font-size: 1rem;
+          font-family: ${fonts[fontIndex]};
+        }
+
+        .nav-links a:hover {
+          text-decoration: underline;
         }
 
         h1 {

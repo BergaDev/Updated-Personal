@@ -74,7 +74,7 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/matthew-bergamini" target="_blank">Linked-In</a>
           <a href="https://www.instagram.com/could_be_a_berga/" target="_blank">Instagram</a>
           <a href="https://www.discordapp.com/users/579529508194091019" target="_blank">Discord</a>
-          <a href="mailto:matthew@bergamini.au">Email</a>
+          <a href="mailto:contact@bergamini.au">Email</a>
         </nav>
       </header>
 

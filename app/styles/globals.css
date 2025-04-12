@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'doto';
+    src: url('/fonts/Doto-VariableFont_ROND,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'send';
+    src: url('/fonts/SendFlowers-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'dynaPuff';
+    src: url('/fonts/DynaPuff-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Swash';
+    src: url('/fonts/DeliusSwashCaps-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'handDrawn';
+    src: url('/fonts/DeliciousHandrawn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'unicase';
+    src: url('/fonts/DeliusUnicase-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'meow';
+    src: url('/fonts/MeowScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'gowun';
+    src: url('/fonts/GowunDodum-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'pixer';
+    src: url('/fonts/Pixer-Regular.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .project-container a:hover {
+    color: orange;
+  }
+
+  .container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #2D9DFF;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.3s ease;
+    color: yellow;
+    background: #2D9DFF;
+  }
+
+  .header.scrolled {
+    height: 50px;
+    background: #2D9DFF;
+    justify-content: flex-start;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: yellow;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1100; 
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+  }
+
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed; 
+      top: 50px;
+      right: 10px;
+      width: 85vw; /* Increased width */
+      max-width: 350px;
+      background: rgba(45, 157, 255, 0.95);
+      padding: 25px;
+      border-radius: 10px;
+      z-index: 1000; 
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: yellow;
+      text-decoration: none;
+      padding: 18px; 
+      font-size: 1.4rem;
+      display: block;
+      text-align: center; 
+    }
+  }
+
+  @media (min-width: 769px) {
+    .nav-links {
+      display: flex !important;
+      gap: 15px;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+
+  .nav-links a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: doto;
+  }
+
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  h2 {
+  font-family: pixer;
+  }
+
+  .name {
+    text-align: center;
+    font-size: 4rem;
+    transition: font-size 0.3s ease, transform 0.3s ease;
+  }
+
+  .header.scrolled .name {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    margin-top: 10vh;
+    padding: 20px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .projects {
+    margin-top: 50px;
+    font-family: gowun;
+  }
+
+  .project-container {
+   background-color: rgba(77, 145, 247, 0.34);
+   border-radius: 15px;
+   padding: 20px;
+   margin-bottom: 20px;
+  }
+
+  .other-container {
+   background-color: rgba(77, 145, 247, 0.34);
+   border-radius: 15px;
+   padding: 20px;
+   margin-bottom: 20px;
+  }
+
+  table {
+  border-spacing: 50px}
+
+  .projects-experiences-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .projectsDiv, .experiences {
+    width: 50%;
+  }
+
+  .experiences {
+    width: 50%;
+  }
+
+  .projectsDiv, .experiences {
+    width: 90%;
+  }
+
+  h2 {
+  color: yellow;
+  font-size: 1.5rem;
+  }
+
+  .project-container {
+      padding: 15px;
+    }
+
+  @media (max-width: 768px) {
+  .projects-experiences-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

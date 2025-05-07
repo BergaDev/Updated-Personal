@@ -5,6 +5,7 @@ import Header from './components/Header';
 import IntroSection from './components/IntroSection';
 import ProjectsSection from './components/ProjectsSection';
 import ExperiencesSection from './components/ExperiencesSection';
+import ScrollArrow from './components/ScrollArrow';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,6 +61,7 @@ export default function Home() {
             </div>
           </section>
         </main>
+        <ScrollArrow />
       </div>
     </>
   );

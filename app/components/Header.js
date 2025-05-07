@@ -1,7 +1,11 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header({ fonts, fontIndex, scrolled, setMenuOpen, menuOpen }) {
+  const pathname = usePathname();
+  
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <h1 className="name" style={{ fontFamily: fonts[fontIndex] }}>Matthew Bergamini</h1>
@@ -13,6 +17,8 @@ export default function Header({ fonts, fontIndex, scrolled, setMenuOpen, menuOp
         ☰
       </button>
       <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <Link href="/" className={pathname === '/' ? 'active' : ''}>Home</Link>
+        <Link href="/blog" className={pathname === '/blog' ? 'active' : ''}>Blog & Photos</Link>
         <a href="https://github.com/BergaDev" target="_blank">Github</a>
         <a href="https://www.linkedin.com/in/matthew-bergamini" target="_blank">Linked-In</a>
         <a href="https://www.instagram.com/could_be_a_berga/" target="_blank">Instagram</a>

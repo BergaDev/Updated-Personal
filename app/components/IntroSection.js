@@ -172,7 +172,7 @@ export default function IntroSection() {
                 <div key={index} style={styles.pictureCard}>
                   <img 
                     src={`/pics/${image}`}
-                    alt="Description"
+                    alt="Pictures"
                     style={styles.picture}
                   />
                 </div>

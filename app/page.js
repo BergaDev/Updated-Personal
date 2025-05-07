@@ -53,6 +53,8 @@ export default function Home() {
           setMenuOpen={setMenuOpen}
         />
         <main className="content">
+          {/* inserted blank space so that animation would't hide the immediate content block */}
+          <div style={{ height: '50px' }}></div>
           <IntroSection />
           <section className="projects">
             <div className="projects-experiences-container">

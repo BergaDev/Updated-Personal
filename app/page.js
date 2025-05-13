@@ -28,7 +28,7 @@ export default function Home() {
     if (scrolled) return;
     const interval = setInterval(() => {
       setFontIndex(prev => (prev + 1) % fonts.length);
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [scrolled]);
 

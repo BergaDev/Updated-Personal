@@ -141,7 +141,7 @@ export default function IntroSection() {
                 <h4>Monday 19th May 2025</h4>
                 <p>
                   Just trying this now! That's what this is, just need my data please.
-                  Please, please work, damn you Baseline
+                  Please, please work, damn you BaselineJS!
                 </p>
               </div>
               <div style={styles.blogCard}>

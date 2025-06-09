@@ -12,7 +12,7 @@ export default function Home() {
   const [fontIndex, setFontIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const fonts = ['doto', 'send', 'dynaPuff', 'Swash', 'handDrawn', 'unicase', 'meow'];
+  const fonts = ['doto', 'Swash', 'unicase', 'meow', 'bobaland', 'chewy', 'lafga'];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);

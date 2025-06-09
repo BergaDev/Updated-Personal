@@ -15,16 +15,17 @@ export default function IntroSection() {
       padding: '10px 20px',
       fontSize: '1.1rem',
       cursor: 'pointer',
-      color: 'white',
+      color: 'yellow',
       border: '1px solid rgba(77, 145, 247, 0.6)',
       borderRadius: '5px',
       transition: 'all 0.3s ease'
     },
     buttonActive: {
-      backgroundColor: 'rgba(77, 145, 247, 0.5)'
+      backgroundColor: 'yellow',
+      color: 'black'
     },
     buttonInactive: {
-      backgroundColor: 'rgba(77, 145, 247, 0.34)'
+      backgroundColor: 'rgba(179, 246, 255, 0.34)'
     },
     expandableContainer: {
       maxHeight: activeSection ? '500px' : '0',
@@ -136,15 +137,6 @@ export default function IntroSection() {
         {activeSection === 'blog' && (
           <div style={styles.blogContainer}>
             <div style={styles.blogContent}>
-              <div style={styles.blogCard}>
-                <h3 style={styles.h3}>GitHub Webook API</h3>
-                <h4>Monday 19th May 2025</h4>
-                <p>
-                  Just trying this now! That's what this is, just need my data please.
-                  Please, please work, damn you BaselineJS!
-                  One more test!!!
-                </p>
-              </div>
               <div style={styles.blogCard}>
                 <h3 style={styles.h3}>AWS Cognito</h3>
                 <h4>Wed 7th May 2025</h4>

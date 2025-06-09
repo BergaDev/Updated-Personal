@@ -61,6 +61,27 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'bobaland';
+    src: url('/fonts/Bobaland-OVXB3.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'chewy';
+    src: url('/fonts/Chewy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'lafga';
+    src: url('/fonts/LufgaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   .project-container a:hover {
     color: orange;
   }
@@ -129,7 +150,7 @@
       position: fixed; 
       top: 50px;
       right: 10px;
-      width: 85vw; /* Increased width */
+      width: 85vw;
       max-width: 350px;
       background: rgba(45, 157, 255, 0.95);
       padding: 25px;
@@ -149,9 +170,27 @@
       display: block;
       text-align: center; 
     }
+
+    .name {
+      font-size: 2.2rem !important;
+      padding: 0 15px;
+      word-wrap: break-word;
+    }
+
+    .header.scrolled .name {
+      font-size: 1.2rem !important;
+    }
   }
 
   @media (min-width: 769px) {
+    .name {
+      font-size: 4rem;
+    }
+
+    .header.scrolled .name {
+      font-size: 1.5rem;
+    }
+
     .nav-links {
       display: flex !important;
       gap: 15px;
@@ -187,12 +226,7 @@
 
   .name {
     text-align: center;
-    font-size: 4rem;
     transition: font-size 0.3s ease, transform 0.3s ease;
-  }
-
-  .header.scrolled .name {
-    font-size: 1.5rem;
   }
 
   .content {
@@ -211,14 +245,19 @@
   }
 
   .project-container {
-   background-color: rgba(77, 145, 247, 0.34);
+   background-color: rgba(179, 246, 255, 0.34);
    border-radius: 15px;
    padding: 20px;
    margin-bottom: 20px;
+   img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+   }
   }
 
   .other-container {
-   background-color: rgba(77, 145, 247, 0.34);
+   background-color: rgba(179, 246, 255, 0.34);
    border-radius: 15px;
    padding: 20px;
    margin-bottom: 20px;

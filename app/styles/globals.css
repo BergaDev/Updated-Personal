@@ -1,3 +1,11 @@
+:root {
+  color-scheme: light only;
+}
+
+* {
+  color-scheme: light only;
+}
+
 @font-face {
     font-family: 'doto';
     src: url('/fonts/Doto-VariableFont_ROND,wght.ttf') format('truetype');
@@ -299,6 +307,11 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+button.inactive {
+  background-color: yellow;
+  color: black !important;
 }
 
 .scroll-arrow {

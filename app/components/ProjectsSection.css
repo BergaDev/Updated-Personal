@@ -1,0 +1,29 @@
+.image-container {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.toggle-buttons button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #333;
+  background: yellow;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons button:hover {
+  background: #f0f0f0;
+}
+
+.toggle-buttons button.active {
+  background: #333;
+  color: white;
+} 

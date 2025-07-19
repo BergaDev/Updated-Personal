@@ -63,7 +63,7 @@ export default function ProjectsSection() {
           <h3>My role in this project was to build the backend, API routes, testing workflows, and database models</h3><br />
         </div>
         <div className="project-container">
-          <h2><a href="https://www.ticketexpert.me" target="_blank">Capstone Project - Baselink</a></h2>
+          <h2>Capstone Project - Baselink</h2>
           <p>Source? Probably Closed</p>
           <img src="pics/BaselinkScreen.png" alt="Baselink" />
           <h3>A current Work In Progress fullstack project built during UOW Capstone for our client <a href="https://devika.com" target="_blank">Devika</a></h3><br />

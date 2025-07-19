@@ -15,6 +15,8 @@ export default function ExperiencesSection() {
           <p>HTML/CSS</p>
           <p>JS</p>
           <p>NodeJS/NextJS</p>
+          <p>TS</p>
+          <p>AWS Components (Cognito, API Gateway, Route53, CloudFront, Lambda, DynamoDB)</p>
         </div>
       </div>
     );

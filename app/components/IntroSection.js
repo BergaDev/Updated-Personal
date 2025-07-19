@@ -137,6 +137,15 @@ export default function IntroSection() {
         {activeSection === 'blog' && (
           <div style={styles.blogContainer}>
             <div style={styles.blogContent}>
+            <div style={styles.blogCard}>
+                <h3 style={styles.h3}>Capstone Progress</h3>
+                <h4>Sat 19th July 2025</h4>
+                <p>
+                  A few months later and the capstone project is speeding up!
+                  For me core backend functionality is built, tested and working (for the most part), I'll continue to update it to fix things up and add things like authenication to it.
+                  The calulation of statistics and github API itergration has a few routes, but more to come and and think about.
+                </p>
+              </div>
               <div style={styles.blogCard}>
                 <h3 style={styles.h3}>AWS Cognito</h3>
                 <h4>Wed 7th May 2025</h4>
@@ -153,14 +162,6 @@ export default function IntroSection() {
                   314 Project is now hosted!
                   Took some time to merge branches and test stuff, after setting up some new routing it works!
                   Check it out at <a href="https://www.ticketexpert.me" target="_blank" style={{color: 'yellow'}}>ticketexpert.me</a>
-                </p>
-              </div>
-              <div style={styles.blogCard}>
-                <h3 style={styles.h3}>Test Blog thing</h3>
-                <h4>Somedate</h4>
-                <p>
-                  Needed something to fill up this blog thing did't I.
-                  Absolutely no idea what to write here, but nobody would be reading this anyway, i just want to build it for myself, werid fun thing to do.
                 </p>
               </div>
             </div>
